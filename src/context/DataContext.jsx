@@ -2,13 +2,12 @@ import { createContext, useState, useEffect } from "react"
 export const DataContext = createContext()
 
 const DataProvider = ({ children }) => {
-  
   const [page, setPage] = useState("https://pokeapi.co/api/v2/pokemon/")
   const [pokemon, setPokemon] = useState("")
   const [results, setResults] = useState("")
   const [pokeData, setPokeData] = useState("")
   const [pokeDataDetail, setPokeDataDetail] = useState("")
-  
+
   useEffect(() => {
     ;(async function () {
       let data = await fetch(page)
@@ -46,8 +45,6 @@ const DataProvider = ({ children }) => {
   // --------------------------------------------------------------------------------------------------------------
   // --------------------------------------------------------------------------------------------------------------
 
-
-
   return (
     <DataContext.Provider
       value={{
@@ -57,6 +54,7 @@ const DataProvider = ({ children }) => {
         setPokeData,
         results,
         pokeDataDetail,
+        setPage
       }}
     >
       {children}
