@@ -1,5 +1,7 @@
+import { useState } from "react"
 import style from "./Card.css"
-export default function DetailCard({ pokemonDetail, showModal, setShowModal }) {
+export default function DetailCard({ pokemonDetail }) {
+  const [showModal, setShowModal] = useState(false)
 
   return (
     <div>

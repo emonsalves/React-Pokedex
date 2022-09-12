@@ -1,15 +1,11 @@
-
 import Pagination from "../Pagination"
 import DetailCard from "./DetailCard"
-import { useState } from "react"
 import style from "./Card.css"
 
 function Card({ pokeInfo, results }) {
-  const [showModal, setShowModal] = useState(false)
-
   const clickPoke = (e) => {
     console.log("click show")
-    setShowModal(true)
+    // setShowModal(true)
   }
 
   return (
@@ -51,8 +47,9 @@ function Card({ pokeInfo, results }) {
                 <div className="pt-4">
                   <DetailCard
                     pokemonDetail={pokemon}
-                    showModal={showModal}
-                    setShowModal={setShowModal}
+                    // showModal={showModal}
+
+                    // setShowModal={setShowModal}
                   />
                 </div>
               </div>

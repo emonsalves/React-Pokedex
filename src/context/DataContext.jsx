@@ -17,10 +17,13 @@ const DataProvider = ({ children }) => {
       setResults(data)
 
       let dataResultsUrl = await Promise.all(
-        await data.results.map((item) => {
-          return fetch(item.url)
-            .then((res) => res.json())
-            .catch((err) => console.log(err))
+        await data.results.map(async (item) => {
+          try {
+            const res = await fetch(item.url)
+            return await res.json()
+          } catch (err) {
+            return console.log(err)
+          }
         })
       )
       setPokeData(dataResultsUrl)
