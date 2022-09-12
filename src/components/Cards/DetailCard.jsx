@@ -1,15 +1,14 @@
-import { useState } from "react"
 import style from "./Card.css"
-export default function DetailCard({ pokemonDetail }) {
-  const [showModal, setShowModal] = useState(false)
+export default function DetailCard({ pokemonDetail, showModal, setShowModal }) {
+
   return (
     <div>
       <button
-        className="w-full bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
+        className="w-full bg-[#CC0000] text-white active:bg-[#FB1B1B] font-bold uppercase text-sm px-6 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150 rounded-b-[20px]"
         type="button"
         onClick={() => setShowModal(true)}
       >
-        More Information
+        Pokemon Information
       </button>
       {showModal ? (
         <>
@@ -33,19 +32,19 @@ export default function DetailCard({ pokemonDetail }) {
 
                 <div className="w-full flex border border-5 justify-center">
                   <img
-                    className="w-[180px] image"
+                    className="w-[180px] image hover:-translate-y-5 hover:scale-125 duration-300"
                     src={pokemonDetail.sprites.front_default}
                   />
                   <img
-                    className="w-[180px] image"
+                    className="w-[180px] image hover:-translate-y-5 hover:scale-125 duration-300"
                     src={pokemonDetail.sprites.back_default}
                   />
                   <img
-                    className="w-[180px] image"
+                    className="w-[180px] image hover:-translate-y-5 hover:scale-125 duration-300"
                     src={pokemonDetail.sprites.front_shiny}
                   />
                   <img
-                    className="w-[180px] image"
+                    className="w-[180px] image hover:-translate-y-5 hover:scale-125 duration-300"
                     src={pokemonDetail.sprites.back_shiny}
                   />
                 </div>

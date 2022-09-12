@@ -1,5 +1,5 @@
 .social-container {
-    background-color: hsl(221, 100%, 49%);
+    background-color: #1C4CBD;
     color: white;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@
 }
 
 .social-icons li a:hover {
-    background-image: linear-gradient(45deg, #1216e9, #f28d9b, #f90616);
+    background-image: linear-gradient(45deg, #FFDE00,#CC0000, #FFDE00 );
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
@@ -46,7 +46,7 @@
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #1216e9, #f28d9b, #f90616);
+    background: linear-gradient(45deg, #FFDE00,  #CC0000, #FFDE00);
     transform: scale(1);
     transition: 0.5s ease-in-out;
 }

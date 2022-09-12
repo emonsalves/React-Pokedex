@@ -7,6 +7,7 @@ const DataProvider = ({ children }) => {
   const [results, setResults] = useState("")
   const [pokeData, setPokeData] = useState("")
   const [pokeDataDetail, setPokeDataDetail] = useState("")
+  // const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     ;(async function () {
@@ -54,7 +55,9 @@ const DataProvider = ({ children }) => {
         setPokeData,
         results,
         pokeDataDetail,
-        setPage
+        setPage,
+        // showModal,
+        // setShowModal,
       }}
     >
       {children}

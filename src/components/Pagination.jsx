@@ -11,7 +11,7 @@ function Pagination({ results }) {
     setPage(results.previous)
   }
   return (
-    <div className="py-2 flex justify-center items-center">
+    <div className="py-2 flex justify-center items-center bg-black">
       <nav className="block">
         <ul className="flex pl-0 rounded list-none flex-wrap">
           {(() => {
