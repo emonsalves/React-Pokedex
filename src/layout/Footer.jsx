@@ -1,8 +1,9 @@
 import React from 'react'
+import SocialBand from '../components/SocialBand/SocialBand'
 
 function Footer() {
   return (
-    <div>Footer</div>
+   <SocialBand/>
   )
 }
 
