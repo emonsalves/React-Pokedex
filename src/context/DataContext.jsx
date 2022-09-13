@@ -7,7 +7,16 @@ const DataProvider = ({ children }) => {
   const [results, setResults] = useState("")
   const [pokeData, setPokeData] = useState("")
   const [pokeDataDetail, setPokeDataDetail] = useState("")
-  // const [showModal, setShowModal] = useState(false)
+
+  // --------------------------------------------------------------------
+  // --------------------------------------------------------------------
+  // Para capturar lo que doy click en este caso
+  const handledItem = (pokemon) => {
+    // setPokemon(pokemon)
+    console.log(pokemon.name)
+  }
+  // --------------------------------------------------------------------
+  // --------------------------------------------------------------------
 
   useEffect(() => {
     ;(async function () {
@@ -59,8 +68,7 @@ const DataProvider = ({ children }) => {
         results,
         pokeDataDetail,
         setPage,
-        // showModal,
-        // setShowModal,
+        handledItem,
       }}
     >
       {children}

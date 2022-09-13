@@ -7,14 +7,14 @@ export default function Navbar() {
   return (
     <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-[#1C4CBD]">
       <div className="container px-4 mx-auto flex flex-row items-center justify-between">
-        <img className="w-48" src="/src/assets/banner.png" />
+        <img className="w-48" src="https://i.postimg.cc/c1zr1Ysz/banner.png" />
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          {/* <a
+          <a
             className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
             href="#pablo"
           >
             PokeDex React
-          </a> */}
+          </a>
           <MediaPlayer />
 
           <button
@@ -39,7 +39,7 @@ export default function Navbar() {
                 href="#pablo"
               >
                 <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i>
-                <span className="ml-2">Share</span>
+                <span className="ml-2">Pokemon</span>
               </a>
             </li>
             <li className="nav-item">
