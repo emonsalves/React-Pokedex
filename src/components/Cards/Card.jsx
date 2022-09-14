@@ -1,11 +1,16 @@
-import Pagination from "../Pagination"
-import DetailCard from "./DetailCard"
+import Pagination from "../Pagination";
+import Modal from "./Modal";
+import { useState } from "react";
 import style from "./Card.css"
-import { DataContext } from "../../context/DataContext"
-import { useContext } from "react"
 
 function Card({ pokeInfo, results }) {
-  const { handledItem } = useContext(DataContext)
+  const [modalOn, setModalOn] = useState(false);
+  const [pokemon, setPokemon] = useState();
+
+  const clickPoke = (pokemonData) => {
+    setPokemon(pokemonData);
+    setModalOn(true);
+  };
   return (
     <>
       <div className="flex flex-wrap justify-center items-center gap-10 py-4 px-2 bg-poke">
@@ -27,9 +32,11 @@ function Card({ pokeInfo, results }) {
                   className="image w-full hover:-translate-y-5 hover:scale-125 duration-300]"
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
                   alt={pokemon.name}
-                  // onClick={(e) => {
 
-                  // }}
+
+                  data-modal-toggle={`#id${pokemon.id}`}
+                  onClick={() => clickPoke(pokemon)}
+
                 />
                 <div className="">
                   <div className="font-bold text-xl text-center hover:scale-125 duration-300">
@@ -37,16 +44,30 @@ function Card({ pokeInfo, results }) {
                   </div>
                 </div>
                 <div className="pt-4">
-                  <DetailCard pokemonDetail={pokemon} />
+                  <button
+                    className="block text-white bg-[#FB1B1B] hover:bg-[#FB1B1B] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-b-xl text-sm px-5 py-2.5 text-center dark:bg-[#FB1B1B] dark:hover:bg-[#FB1B1B] dark:focus:ring-bg-[#FB1B1B]"
+                    type="button"
+                    data-modal-toggle={`#id${pokemon.id}`}
+                    onClick={() => clickPoke(pokemon)}
+                  >
+                    Pokémon Information
+                  </button>
                 </div>
               </div>
             ))
           : null}
+        {modalOn && pokemon && (
+          <Modal
+            id={`id${pokemon.id}`}
+            pokemonDetail={pokemon}
+            setModalOn={setModalOn}
+          />
+        )}
       </div>
 
       <Pagination results={results} />
     </>
-  )
+  );
 }
 
-export default Card
+export default Card;
