@@ -5,17 +5,11 @@ import Search from "./Search"
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false)
   return (
-    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-[#1C4CBD]">
-      <div className="container px-4 mx-auto flex flex-row items-center justify-between">
+    <nav className="relative flex flex-wrap items-center justify-between px-1 py-3 bg-[#1C4CBD]">
+      <div className="container mx-auto flex flex-row items-center justify-between">
         <img className="w-48" src="https://i.postimg.cc/c1zr1Ysz/banner.png" />
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <a
-            className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-            href="#pablo"
-          >
-            PokeDex React
-          </a>
-          <MediaPlayer />
+          {/* <MediaPlayer /> */}
 
           <button
             className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -60,9 +54,12 @@ export default function Navbar() {
                 <span className="ml-2">Pin</span>
               </a>
             </li>
+
+            <li>
+              <Search />
+            </li>
           </ul>
         </div>
-        <Search />
       </div>
     </nav>
   )
